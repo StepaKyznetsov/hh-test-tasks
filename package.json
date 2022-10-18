@@ -1,0 +1,10 @@
+{
+  "name": "hh",
+  "version": "1.0.0",
+  "main": "second-task.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node second-task.js"
+  }
+}
