@@ -12,7 +12,7 @@ readline.on('line', (line) => {
         let n = [],
             m = [];
         numbers.forEach((item, i) => (i % 2 == 0) ? n.push(item) : m.push(item));
-        const firstArr = n.filter(e => e != '-'); //итоговые массивы для работы
+        const firstArr = n.filter(e => e !== '-'); //итоговые массивы для работы
         const secondArr = m.filter(e => e !== '-');
 
         let currentSum = 0,  //текущая сумма элементов
