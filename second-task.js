@@ -15,20 +15,20 @@ readline.on('line', (line) => {
         let regionNumber = 2;
         for(let i = 0; i < n; i++){
             for(let j = 0; j < m; j++)
-                if (numbers[i][j] == 1){
+                if (numbers[i][j] === 1){
                     neighbors(numbers, n, m, i, j, regionNumber);
                     regionNumber++;
                 }
         }
+        let top = 0,
+            bottom = 0,
+            left = 0,
+            right = 0,
+            first = true;
         for(let k = 2; i < regionNumber; i++){
-            let top = 0, 
-                bottom = 0, 
-                left = 0, 
-                right = 0,
-                first = true;
             for (let i = 0; i < m; i++){
                 for (let j = 0; j < n; j++){
-                    if (numbers[i][j] == k){
+                    if (numbers[i][j] === k){
                         if (first) {
                             top = i;
                             bottom = i;
@@ -67,7 +67,7 @@ const neighbors = (arr, n, m, x, y, number) => {
     arr[x][y] = number;
     for(let i = Math.max(0, x-1); i <= Math.min(x+1, m-1); i++){
         for(let j = Math.max(0, y - 1); j <= Math.min(y + 1, n-1); j++){
-            if(arr[i][j] == 1) neighbors(arr, n, m, i, j, number);
+            if(arr[i][j] === 1) neighbors(arr, n, m, i, j, number);
         }    
     }
 }
